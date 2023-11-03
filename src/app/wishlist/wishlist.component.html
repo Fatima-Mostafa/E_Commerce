@@ -1,0 +1,24 @@
+<div class="container w-75 wish">
+    <div class="bg-main-light p-4 my-4">
+        <h3 class="text-center">Wishlist❤</h3>
+        <div class="message">
+            <h5 class="fw-bold">Your wishlist is empty Now😮</h5>
+            <button routerLink="/products" class="btn paymentbtn mt-4">Save Now</button>
+        </div>
+        <div *ngFor="let item of wishlist" class="row align-items-center border-bottom py-3">
+            <div class="col-md-2">
+                <img class="display" [src]="item.imageCover" alt="">
+            </div>
+            <div class="col-md-10 d-flex justify-content-between">
+                <div class="div">
+                    <h6>{{item.title}}</h6>
+                    <h6>Price : {{item.price}} <span class="color">EGP</span> </h6>
+                    <button (click)="removeItem(item._id)" class="btn m-0 p-0"> <i class="fa-solid fa-trash remove"></i> Remove</button> 
+                </div>
+                <div class="div">
+                    <button (click)="AddtoCart(item._id)" class="btn buttons mt-2 ">Add To Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

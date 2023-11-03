@@ -1,0 +1,47 @@
+<div class="home">
+    <div class="welcome">
+        <h6 class="pb-2">welcome to</h6>
+        <h1 class="pb-2 fw-bold">OurShop🛒</h1>
+        <p>Welcome to our OurShop website! We're thrilled to have you here.
+            Whether you're a seasoned online shopper or new to the world of e-commerce,
+            you've come to the right place.</p>
+    </div>
+</div>
+<div class="container sample text-center">
+    <div class="row py-5">
+        <div class="col-md-4 pt-5">
+            <h3 class="pb-2">Brands</h3>
+            <h6>Here are our Brands, we hope you like it🖤</h6>
+            <div class="fline"></div>
+            <div class="sline"></div> 
+            <div class="tline"></div> 
+        </div>
+        <div *ngFor='let product of Brands | paginate: { id: "brandspaginate", itemsPerPage: pageSize, currentPage: currentpage, totalItems: total }'
+            class="col-md-4 text-center items">
+            <div class="container">
+                <img class="img-fluid w-50 py-2 imgdata item" [src]="product.image" alt="">
+                <h3 class="w-100 h6">{{product.name}}</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Pagination -->
+    <div class="pagination d-flex justify-content-center mt-4">
+        <pagination-controls  id="brandspaginate"
+        (pageChange)="pageChanged($event)"
+        (pageBoundsCorrection)="pageChanged($event)"
+        [maxSize]="9"
+        [directionLinks]="true"
+        [autoHide]="true"
+        [responsive]="true"
+        previousLabel="Previous"
+        nextLabel="Next"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+    </div> 
+</div>
+
+
+  
+

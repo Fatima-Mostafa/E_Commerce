@@ -1,0 +1,14 @@
+<div class="w-50 mx-auto check">
+    <h4 class="text-center mb-4 fs-5 fw-bold">Personal Data📝</h4>
+    <form [formGroup]="shippingAddress" (ngSubmit)="handelsubmit(shippingAddress)">
+        <label class="pb-2 fw-bold" for="details">Details <span class="color">:</span></label>
+        <input formControlName="details" class="form-control borderNone mb-3" type="text" id="details">
+        <label class="pb-2 fw-bold" for="phone">Phone <span class="color">:</span></label>
+        <input formControlName="phone" class="form-control borderNone mb-3" type="number" id="phone">
+        <label class="pb-2 fw-bold" for="city">City <span class="color">:</span></label>
+        <input formControlName="city" class="form-control borderNone mb-3" type="text" id="city">
+        <div class="text-center">
+            <button type="submit" class="btn paymentbtn mt-2 text-center">Pay</button>
+        </div>
+    </form>
+</div>

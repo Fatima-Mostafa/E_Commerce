@@ -1,0 +1,38 @@
+<div class="py-5 loginall">
+    <form class="form-control login w-50 m-auto" [formGroup]="loginForm" (ngSubmit)="submitRegistrationForm(loginForm)">
+        <div class="w-75 text-center m-auto pt-4">
+            <h4 class="fw-bold">Already a Customer?</h4>
+            <h6>Welcome back! Sign in for faster checkout.</h6>
+        </div>
+        <div class="form-group">
+            <div class="form-group my-4">
+                <label class="fw-bold" for="mail">Email :</label>
+                <input formControlName="email" class="form-control borderNone" type="email" id="mail">
+                <div *ngIf="loginForm.get('email')?.errors!=null&&loginForm.get('email')?.touched" class="alert my-2 alert-danger">
+                    <p *ngIf="loginForm.get('email')?.errors?.['required']">Email is requiered</p>
+                    <p *ngIf="loginForm.get('email')?.errors?.['email']">Email is invalid</p>
+                </div>
+            </div>
+            <div class="form-group my-4">
+                <label class="fw-bold" for="password">Password :</label>
+                <input formControlName="password" class="form-control borderNone" type="password" id="password">
+                <div *ngIf="loginForm.get('password')?.errors!=null&&loginForm.get('password')?.touched" class="alert my-2 alert-danger">
+                    <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is requiered</p>
+                    <p *ngIf="loginForm.get('password')?.errors?.['pattern']">Password pattern should started with a capital letter with atleast 3 charechters and max 8</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="loginbtn" type="submit">SignIn</button>
+        </div>
+        <div class="create mb-2">
+            <a (mouseover)="this.showcloud()" class="link-offset-2 link-underline link-underline-opacity-0" routerLinkActive="active" [routerLink]="['/register']" >Create an account?</a>
+        </div>
+    </form>
+    <div class="cloud">
+        <img class="w-100 img-fluid" src="assets/images/1.png" alt="">
+    </div>
+    <div class="welcome">
+        <h5 class="welcomeEdit">Welcome to our company,<br>we hope our website<br> benefits you🤍</h5>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.register{
+    width: 850px;
+    margin: auto;
+    position: relative;
+}
+.registerform{
+    background-color: rgb(249, 247, 247);
+    -webkit-box-shadow: 31px -16px 13px 2px rgba(245,54,121,1);
+    -moz-box-shadow: 31px -16px 13px 2px rgba(245,54,121,1);
+    box-shadow: 31px -16px 13px 2px rgba(245,54,121,1);
+}
+.registerbtn{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color:rgb(249, 247, 247);
+    width:100px;
+}
+.borderNone{
+    border-style: none;
+}
+.message{
+    display: none;
+}
+.done{
+    background-color: rgb(41, 38, 39,0.97);
+    width: 850px;
+    height: 530px;
+    margin-top: 117px;
+    margin-left: 320px;
+    text-align: center;
+    display: flex;
+    top: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color:rgb(249, 247, 247);
+    animation: swirl-in-br-clock 2s ease-out 0s 1 normal forwards; 
+}
+@keyframes swirl-in-br-clock {
+    0% {
+        transform:rotate(-540deg) scale(0);
+        transform-origin:100% 100%;
+        opacity:0.3;
+    }
+    100% {
+        transform:rotate(0) scale(1);
+        transform-origin:100% 100%;
+        opacity:0.97;
+    }
+}

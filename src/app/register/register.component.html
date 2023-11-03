@@ -1,0 +1,58 @@
+<div class="register mt-5">
+    <form class="form-control registerform py-2" [formGroup]="registerForm" (ngSubmit)="submitRegistrationForm(registerForm)">
+        <div class="w-75 text-center m-auto pt-4">
+            <h4 class="fw-bold">Welcome🖤</h4>
+            <h6>Sign up for faster checkout.</h6>
+        </div>
+        <div class="form-group py-1">
+            <label class="pb-2 fw-bold" for="name">Name:</label>
+            <input formControlName="name" class="form-control borderNone" type="text" id="name">
+            <div *ngIf="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched" class="alert my-2 alert-danger">
+                <p *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</p>
+                <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Name minimum length is 3</p>
+                <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">Name maximum length is 10</p>
+            </div>
+        </div>
+
+        <div class="form-group py-1">
+            <label class="pb-2 fw-bold" for="mail">Email :</label>
+            <input formControlName="email" class="form-control borderNone" type="email" id="mail">
+            <div *ngIf="registerForm.get('email')?.errors!=null&&registerForm.get('email')?.touched" class="alert my-2 alert-danger">
+                <p *ngIf="registerForm.get('email')?.errors?.['required']">Email is requiered</p>
+                <p *ngIf="registerForm.get('email')?.errors?.['email']">Email is invalid</p>
+            </div>
+        </div>
+
+        <div class="form-group py-1">
+            <label class="pb-2 fw-bold" for="password">Password :</label>
+            <input formControlName="password" class="form-control borderNone" type="password" id="password">
+            <div *ngIf="registerForm.get('password')?.errors!=null&&registerForm.get('password')?.touched" class="alert my-2 alert-danger">
+                <p *ngIf="registerForm.get('password')?.errors?.['required']">Password is requiered</p>
+                <p *ngIf="registerForm.get('password')?.errors?.['pattern']">Password pattern should started with a capital letter with atleast 3 charechters and max 8</p>
+            </div>
+        </div>
+
+        <div class="form-group py-1">
+            <label class="pb-2 fw-bold" for="repassword">Repassword :</label>
+            <input formControlName="rePassword" class="form-control borderNone" type="password" id="repassword">
+            <div *ngIf="registerForm.get('rePassword')?.errors!=null&&registerForm.get('rePassword')?.touched" class="alert my-2 alert-danger">
+                <p *ngIf="registerForm.get('rePassword')?.errors?.['required']">rePassword is requiered</p>
+                <p *ngIf="registerForm.get('repassword')?.errors?.['pattern']">Password pattern should started with a capital letter with atleast 3 charechters and max 8</p>
+            </div>
+        </div>
+
+        <div class="form-group py-2">
+            <label class="pb-2 fw-bold" for="phone">Phone :</label>
+            <input formControlName="phone" class="form-control borderNone" type="number" id="phone">
+            <div *ngIf="registerForm.get('phone')?.errors!=null&&registerForm.get('phone')?.touched" class="alert my-2 alert-danger">
+                <p *ngIf="registerForm.get('phone')?.errors?.['required']">phone is requiered</p>
+            </div>
+        </div>
+        <div class="text-center mt-2">
+            <button [disabled]="registerForm.invalid" class="registerbtn m-auto" type="submit">SignUp</button>
+        </div>
+    </form>
+</div>
+
+
+

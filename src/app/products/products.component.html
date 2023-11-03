@@ -1,0 +1,37 @@
+<h3>Our Products</h3>
+<div class="container sample text-center">
+    <div class="row py-5">
+        <div *ngFor='let product of products | paginate: { id: "productpaginate", itemsPerPage: pageSize, currentPage: currentpage, totalItems: total }'
+            class="items col-md-4 text-center">
+            <div class="container">
+                <img class="img-fluid py-2 imgdata item" [src]="product.images[0]" alt="">
+            </div>
+            <div class="cover">
+                <div class="bt">
+                    <button (click)="AddtoCart(this.product.id)" class="btn buttons text-center">addToCart <i class="fa-solid fa-cart-shopping"></i></button>
+                    <a class="btn buttons text-center mt-2" [routerLink]='["/productdetails", product.id]'>ProductDetails</a>
+                </div>
+                <div class="wish">
+                    <i (click)="AddToWishlist(this.product.id)" class="fa-regular heartwishhover heartwish fa-heart" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pagination -->
+    <div class="pagination d-flex justify-content-center mt-4">
+        <pagination-controls  id="productpaginate"
+        (pageChange)="pageChanged($event)"
+        (pageBoundsCorrection)="pageChanged($event)"
+        [maxSize]="9"
+        [directionLinks]="true"
+        [autoHide]="true"
+        [responsive]="true"
+        previousLabel="Previous"
+        nextLabel="Next"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+    </div> 
+</div>
+

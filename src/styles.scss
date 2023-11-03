@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+$bgcolor:rgb(249, 247, 247);
+
+body{
+    font-family: 'Martian Mono', monospace;
+    background-color: $bgcolor;
+    box-sizing:border-box;
+}
+.navbar-nav{
+    margin-left: 110px;
+}
+// Cover on product that appear on hover action
+.imgdata{
+    width: 65%;
+}
+.items {
+    position: relative;
+    margin-bottom: 10px;
+}
+.item{
+    position: relative;
+    box-sizing: border-box;
+}
+.cover{
+    position: absolute;
+    width: 60%;
+    height: 0; /* Set the initial height to 0 */
+    border-radius: 10px;
+    border: rgba(128, 127, 127, 0.6) 3px solid ;
+    margin-left: 75px;
+    display: none;
+    transition-property: height, top; /* Add height property for smooth animation */
+    transition-duration: 2s;
+    transition-delay: 1s;
+}
+.items:hover .cover {
+    height: 100%; /* Change the height to 100% to reveal the cover div */
+    top: 0; /* Move the cover div to the top position on hover */
+    display: flex;
+}
+.bt{
+    margin-top: 270px;
+    width: 100%;
+    padding-left: 30px;
+}
+.buttons{
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    color: white;
+    opacity: 0.8;
+    transition: 0.9s;
+}
+.buttons:hover{
+    opacity:1;
+    color: black;
+    background-color: rgb(252, 1, 89);
+}
+.paymentbtn{
+    border: 2px solid rgb(252, 1, 89);
+    color: black;
+    font-weight: bold;
+}
+.paymentbtn:hover{
+    background-color: rgb(252, 1, 89);
+    border: 0px;
+    color: black;
+}
+.heartwish{
+    font-size: 26px;
+    padding-right: 8px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+.heartwishhover:hover{
+    font-weight: bold;
+    color: rgb(252, 1, 89);
+}
+.color{
+    color: rgb(252, 1, 89);
+}
+//toasts alerts
+.toast-container{
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.toast-success{
+    background-color: white;
+    color: rgb(45, 38, 40) !important;
+    font-size: 14px !important;
+}
+

@@ -1,0 +1,36 @@
+<div class="container w-75 allcart" *ngIf="cartDetails !=null ; else empty">
+    <div class="bg-main-light p-4 my-4">
+        <h3 class="text-center mt-2">Shop Cart</h3>
+        <div class="appear">
+            <h6 class="text-center"> Total Price : <span class="color">{{cartDetails?.totalCartPrice}} EGP</span></h6>
+        </div>
+        <div *ngFor="let product of cartDetails?.products" class="row align-items-center border-bottom py-3">
+            <div class="col-md-2">
+                <img class="display" [src]="product.product.imageCover" alt="">
+            </div>
+            <div class="col-md-10 d-flex justify-content-between">
+                <div class="div">
+                    <h6>{{product.product.title}}</h6>
+                    <h6>Price : {{product.price}} <span class="color">EGP</span> </h6>
+                    <button (click)="removeItem(product.product._id)" class="btn m-0 p-0"> <i class="fa-solid fa-trash remove"></i> Remove</button>
+                </div>
+                <div class="div">
+                    <button (click)="updateItem(product.product._id , product.count+1)" class="btn border btn-sm">+</button>
+                    <span class="mx-2">{{product.count}}</span>
+                    <button (click)="updateItem(product.product._id , product.count-1)" class="btn border btn-sm">-</button>
+                </div>
+            </div>
+        </div>
+        <div class="appear text-center mt-4">
+            <button routerLink="/checkout" class="btn paymentbtn mt-2 text-center appear">Online Payment <i class="fab fa-cc-visa"></i></button>
+            <button (click)="clearCart()" class="btn paymentbtn mt-2 mx-2 text-center">Clear</button>
+        </div>
+    </div>
+</div>
+<ng-template #empty>
+    <div class="empty">
+        <h5 class="fw-bold">Your wishlist is empty Now😮</h5>
+        <button routerLink="/products" class="btn paymentbtn mt-4">Go Shopping <i class="fas fa-running"></i></button>
+    </div>
+</ng-template>
+

@@ -1,0 +1,20 @@
+<div class="container w-75 mt-5 d-flex">
+    <div class="row">
+        <div class="col-md-7 con">
+            <h5 class="fw-bold">Product Title : </h5>
+            <h6 class="pb-3">{{productDetails.title}}</h6>
+            <h5 class="fw-bold">Product Brandname : </h5>
+            <h6 class="pb-3">{{productDetails.brand.name}}</h6>
+            <h5 class="fw-bold">Product RatingAvg : </h5>
+            <h6 class="pb-3">{{productDetails.ratingsAverage}}</h6>
+            <h5 class="fw-bold">Product Description : </h5>
+            <h6 class="pb-3">{{productDetails.description}}</h6>
+            <div class="fline"></div>
+            <div class="sline"></div> 
+            <div class="tline"></div>
+        </div>
+        <div class="col-md-4">
+            <img class="img" [src]="productDetails.images[1]" alt="">
+        </div>
+    </div>
+</div>
